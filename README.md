@@ -13,7 +13,7 @@ Foi criada duas redes neurais:
 
 Foi possivel obter uma accuracy de 78% com o modelo LeNet porem devido ao tamnho das imagens (100,100) a rede nao consegue extrair 'features' suficientes devido as poucas camadas
 
-Com o Modelo VGG16 foi possivel obter uma accuracy de 85%, essa accuracy poderia der melhorada se fosse usado um dataset maior e melhor do que o obtido e com a extensao do Google Chrome
+Com o Modelo VGG16 foi possivel obter uma accuracy de 85%, essa accuracy poderia ser melhorada se fosse usado um dataset maior e melhor do que o obtido com a extensao do Google Chrome
 
 Link para dataset: https://www.dropbox.com/s/6zwhu1mklfa2lnh/Dataset.rar?dl=0
 
