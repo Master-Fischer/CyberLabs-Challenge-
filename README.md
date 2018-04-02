@@ -1,5 +1,5 @@
 # CyberLabs-Challenge-
-Desafio da empresa CyberLabs de criar um modelo que classifica Cervejas e Refrigerantes
+Desafio da empresa CyberLabs de criar um modelo que classifica Cervejas e Refrigerantes usando Keras e Tensorflow
 
 O data set foi obtido pelo Google Images usando Faktun Batch Download Images[Extensao do Chrome]
 
