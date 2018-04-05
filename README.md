@@ -19,7 +19,7 @@ Instruções:
 
 4) 
 
-  -Rodar Beer_Soda.py para treinar rede LeNet
+  - Rodar Beer_Soda.py para treinar rede LeNet
 
   - Rodar VGG16_transferLearning.py para treinar rede VGG16
   
