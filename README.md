@@ -23,7 +23,9 @@ Instruções:
 
   - Rodar VGG16_transferLearning.py para treinar rede VGG16
   
+  
 5) Para testar rodar ou test_vgg.py ou test_lenet.py com o argumento -i <caminho para a foto>
+
 
 O data set foi obtido pelo Google Images usando Faktun Batch Download Images[Extensão do Chrome].
 
