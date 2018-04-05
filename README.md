@@ -1,6 +1,30 @@
 # CyberLabs-Challenge-
 Desafio da empresa CyberLabs para criar um modelo que pretende distinguir Cervejas de Refrigerantes por meio do programa Keras e Tensorflow.
 
+Bibliotecas Usadas:
+
+-keras com backend Tensorflow
+
+-Numpy 
+
+-Opencv
+
+Instruções:
+
+1) Baixar, e unzip dataset (link no final deste documento)
+
+2) Colocar ambos os codigos no mesmo diretorio que o dataset
+
+3) Baixar weights ja treinados para VGG16 e colocar no mesmo diretorio que o codigo e dataset
+
+4) 
+
+  -Rodar Beer_Soda.py para treinar rede LeNet
+
+  - Rodar VGG16_transferLearning.py para treinar rede VGG16
+  
+5) Para testar rodar ou test_vgg.py ou test_lenet.py com o argumento -i <caminho para a foto>
+
 O data set foi obtido pelo Google Images usando Faktun Batch Download Images[Extensão do Chrome].
 
 Foram criadas duas redes neurais:
@@ -13,7 +37,7 @@ Foram criadas duas redes neurais:
 
 Foi possível obter uma “accuracy” de 78% com o modelo LeNet, porém devido ao tamanho das imagens (100,100) a rede não consegue extrair “features” suficientes devido as poucas camadas.
 
-Com o Modelo VGG16 foi possível obter uma “accuracy” de 85%, esta poderia ser melhorada se fosse usado um dataset maior e melhor do que o obtido com a extensão do Google Chrome.
+Com o Modelo VGG16 foi possível obter uma “accuracy” de 84%, esta poderia ser melhorada se fosse usado um dataset maior e melhor do que o obtido com a extensão do Google Chrome.
 
 Link para dataset: https://www.dropbox.com/s/6zwhu1mklfa2lnh/Dataset.rar?dl=0
 
