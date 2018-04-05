@@ -4,7 +4,6 @@ Created on Mon Mar 26 23:33:06 2018
 
 @author: Lucca
 """
-import tables
 import random
 import os
 import cv2
