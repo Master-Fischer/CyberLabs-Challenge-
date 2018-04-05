@@ -8,9 +8,8 @@ import random
 import os
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
 from keras.utils import to_categorical
-from keras.optimizers import Adam,RMSprop
+from keras.optimizers import Adam
 from keras.preprocessing.image import ImageDataGenerator, random_rotation, random_shift
 from keras.models import Sequential, Model, load_model
 from keras.layers import Dense, Activation, Flatten, Input
