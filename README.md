@@ -21,7 +21,7 @@ Instruções:
 
   - Rodar Beer_Soda.py para treinar rede LeNet
 
-  - Rodar VGG16_transferLearning.py para treinar rede VGG16
+  - Rodar Beers_Sodas_VGG.py para treinar rede VGG16
   
   
 5) Para testar rodar ou test_vgg.py ou test_lenet.py com o argumento -i caminho_para_foto
