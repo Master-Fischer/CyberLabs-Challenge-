@@ -4,12 +4,14 @@ Created on Mon Mar 26 23:33:06 2018
 
 @author: Lucca
 """
+import tables
 import random
 import os
 import cv2
 import numpy as np
+import matplotlib.pyplot as plt
 from keras.utils import to_categorical
-from keras.optimizers import Adam
+from keras.optimizers import Adam,RMSprop
 from keras.preprocessing.image import ImageDataGenerator, random_rotation, random_shift
 from keras.models import Sequential, Model, load_model
 from keras.layers import Dense, Activation, Flatten, Input
@@ -25,30 +27,37 @@ def load_process_img(directory, data, labels):
     for folder in folders:
         images = os.listdir(directory+"\\"+folder)
         for img in images:
-            image = load_img(directory+"\\"+folder+"\\"+img,target_size=(224,224))
+            
+            image = load_img(directory+"\\"+folder+"\\"+img, target_size=(224,224))
             image = img_to_array(image)
-            #image = preprocess_input(image)
+        
+            image = np.expand_dims(image, axis=0)
+            image = preprocess_input(image)       
+            image = np.vstack(image)
+            
             data.append(image)
             if folder == "Beers":
-                labels.append(1)
-            else:
                 labels.append(0)
+            elif folder == "Sodas":
+                labels.append(1)
+ 
 
-            
-
-bs = 10
-epochs = 200
+bs = 32
+epochs = 10
 
 #Carrega todas as fotos,normaliza e separa em train e test set
 data = []
 labels = []
 
-load_process_img("Dataset", data, labels)           
+path = "Images"
+
+load_process_img(path, data, labels)           
 
 labels = np.array(labels)
-data = np.array(data, dtype='float')/255.0 #<----- NORMALIZE!!
+#data = np.array(data, dtype='float')/255.0 #<----- NORMALIZE!!
+data = np.array(data)
 
-(trainX, testX, trainY, testY) = train_test_split(data, labels, test_size=0.25)
+(trainX, testX, trainY, testY) = train_test_split(data, labels, test_size=0.2)
 
 #One-hot encoding
 trainY = to_categorical(trainY,num_classes=2)
@@ -56,7 +65,6 @@ testY = to_categorical(testY, num_classes=2)
 
 #Carrega Modelo VGG16 do keras com weights treinados da imagenet
 vgg16 = VGG16(weights='imagenet')
-print("vgg: ")
 vgg_weights = vgg16.get_weights()
 
 #Transforma modelo em Sequential()
@@ -68,10 +76,10 @@ for layer in vgg16.layers:
 model.layers.pop()
 
 #Define quais camadas seram treinadas
-for layer in model.layers[6:]:
+for layer in model.layers:
     layer.trainable = False
 
-#Adciona ultima camada dense com 2 outputs (Cervejas e refrigerantes)
+#Adciona ultima camada dense com 3 outputs (Cervejas, refrigerantes e fotos negativas)
 model.add(Dense(2,activation='softmax'))
 
 #compila modelo
@@ -83,15 +91,11 @@ train_batches = aug.flow(trainX,trainY,batch_size=bs,shuffle=True)
 test_batches = aug.flow(testX,testY,batch_size=bs,shuffle=True)
 
 #Treina o modelo
-model.fit_generator(train_batches,epochs = epochs,validation_data=test_batches ,steps_per_epoch=100)	
-
+model.fit_generator(train_batches,epochs = epochs,validation_data=test_batches ,steps_per_epoch=250)	
+#model.fit(trainX,trainY,validation_data=(testX,testY),epochs=epochs)
 #Mostra Score do modelo
 print(model.evaluate(testX,testY))
 
 #Salva os weights do modelo
 w = model.get_weights()
-np.save("weights_array",w)
-
-
-
-
+np.save("vgg_weights",w)
