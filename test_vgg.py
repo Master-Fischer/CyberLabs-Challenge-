@@ -43,7 +43,7 @@ image = cv2.resize(image, (224,224))  #Melhores resultados do que (28,28)
 image = np.array(image, dtype='float')/255.0 #<----- NORMALIZE!!
 image = image.reshape(1, image.shape[0],image.shape[1], image.shape[2])
 
-w = np.load('weights_array.npy')
+w = np.load('vgg_weights.npy')
 model.set_weights(w)
 
 pred = model.predict(image)
