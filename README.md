@@ -23,7 +23,7 @@ Foram criadas duas redes neurais:
 
 Foi possível obter uma “accuracy” de 78% com o modelo LeNet, porém devido ao tamanho das imagens (100,100) a rede não consegue extrair “features” suficientes devido as poucas camadas.
 
-Com o Modelo VGG16 foi possível obter uma “accuracy” de 84%, esta poderia ser melhorada se fosse usado um dataset maior e melhor do que o obtido com a extensão do Google Chrome.
+Com o Modelo VGG16 foi possível obter uma “accuracy” de 92%, esta poderia ser melhorada se fosse usado um dataset maior e melhor do que o obtido com a extensão do Google Chrome.
 
 Foi criado tambem um programa que usa o modelo da VGG para classificar imagens capturadas pela webcam. Este modelo foi treinado para classificar uma terceira classe para o programa saber quando nao estiver vendo uma cerveja ou um refrigerante. Por isso tem outro arquivo de weights.
 
@@ -46,12 +46,12 @@ Instruções:
 
 6) Para testar o modelo com a camera rodar o camera.py (com camera_weights.npy no mesmo diretorio)
 
-Link para demonstracao do uso da camera: https://youtu.be/4OIHtkw_KOs
+Link para demonstracao do uso do modelo com camera: https://youtu.be/4OIHtkw_KOs
 
 Link para dataset: https://www.dropbox.com/s/h9ancztpx1qi85t/Dataset.rar?dl=0
 
 Link para weights já treinados (Rede usando aquitetura VGG16): https://www.dropbox.com/s/39k7f6byy5l9dj7/vgg_weights.npy?dl=0
 
-Link para weights para ser usado com a camera: 
+Link para weights para ser usado com a camera: https://www.dropbox.com/s/who87i1dgu8ty1o/camera_weights.npy?dl=0
 
 
