@@ -1,6 +1,8 @@
 # CyberLabs-Challenge-
 Desafio da empresa CyberLabs para criar um modelo que pretende distinguir Cervejas de Refrigerantes por meio do programa Keras e Tensorflow.
 
+Todos os links estao no final deste README incluindo os weights ja treinados, dataset e video demonstrando o uso do modelo com a camera
+
 Bibliotecas Usadas:
 
 -keras com backend Tensorflow
@@ -8,6 +10,22 @@ Bibliotecas Usadas:
 -Numpy 
 
 -Opencv
+
+O data set foi obtido pelo Google Images usando Faktun Batch Download Images[Extensão do Chrome].
+
+Foram criadas duas redes neurais:
+
+ 1)Arquitetura LeNet com tamanho das imagens (100,100).
+ 
+ 2)Arquitetura VGG16*.
+ 
+ *Na rede que utiliza a Arquitetura VGG16, apenas as últimas 10 camadas foram treinadas, as primeiras 6 foram usadas os mesmos weights da rede VGG treinda no dataset ImageNet.
+
+Foi possível obter uma “accuracy” de 78% com o modelo LeNet, porém devido ao tamanho das imagens (100,100) a rede não consegue extrair “features” suficientes devido as poucas camadas.
+
+Com o Modelo VGG16 foi possível obter uma “accuracy” de 84%, esta poderia ser melhorada se fosse usado um dataset maior e melhor do que o obtido com a extensão do Google Chrome.
+
+Foi criado tambem um programa que usa o modelo da VGG para classificar imagens capturadas pela webcam. Este modelo foi treinado para classificar uma terceira classe para o programa saber quando nao estiver vendo uma cerveja ou um refrigerante. Por isso tem outro arquivo de weights.
 
 Instruções:
 
@@ -26,21 +44,14 @@ Instruções:
   
 5) Para testar rodar ou test_vgg.py ou test_lenet.py com o argumento -i caminho_para_foto
 
+6) Para testar o modelo com a camera rodar o camera.py (com camera_weights.npy no mesmo diretorio)
 
-O data set foi obtido pelo Google Images usando Faktun Batch Download Images[Extensão do Chrome].
+Link para demonstracao do uso da camera: https://youtu.be/4OIHtkw_KOs
 
-Foram criadas duas redes neurais:
+Link para dataset: https://www.dropbox.com/s/h9ancztpx1qi85t/Dataset.rar?dl=0
 
- 1)Arquitetura LeNet com tamanho das imagens (100,100).
- 
- 2)Arquitetura VGG16*.
- 
- *Na rede que utiliza a Arquitetura VGG16, apenas as últimas 10 camadas foram treinadas, as primeiras 6 foram usadas os mesmos weights da rede VGG treinda no dataset ImageNet.
+Link para weights já treinados (Rede usando aquitetura VGG16): https://www.dropbox.com/s/39k7f6byy5l9dj7/vgg_weights.npy?dl=0
 
-Foi possível obter uma “accuracy” de 78% com o modelo LeNet, porém devido ao tamanho das imagens (100,100) a rede não consegue extrair “features” suficientes devido as poucas camadas.
+Link para weights para ser usado com a camera: 
 
-Com o Modelo VGG16 foi possível obter uma “accuracy” de 84%, esta poderia ser melhorada se fosse usado um dataset maior e melhor do que o obtido com a extensão do Google Chrome.
 
-Link para dataset: https://www.dropbox.com/s/6zwhu1mklfa2lnh/Dataset.rar?dl=0
-
-Link para weights já treinados (Rede usando aquitetura VGG16): https://www.dropbox.com/s/7uy4iwcvk8xc5tn/weights_array.npy?dl=0
