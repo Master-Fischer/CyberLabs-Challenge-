@@ -19,8 +19,9 @@ Foram criadas duas redes neurais:
  
  2)Arquitetura VGG16*.
  
- *Na rede que utiliza a Arquitetura VGG16, apenas as últimas 10 camadas foram treinadas, as primeiras 6 foram usadas os mesmos weights da rede VGG treinda no dataset ImageNet.
-
+ *Na rede que utiliza a Arquitetura VGG16, apenas a última camada foi treinada. A ultima camada dense do VGG original classificava 1000 classes esta foi alterada para apenas 2
+ 
+ 
 Foi possível obter uma “accuracy” de 78% com o modelo LeNet, porém devido ao tamanho das imagens (100,100) a rede não consegue extrair “features” suficientes devido as poucas camadas.
 
 Com o Modelo VGG16 foi possível obter uma “accuracy” de 92%, esta poderia ser melhorada se fosse usado um dataset maior e melhor do que o obtido com a extensão do Google Chrome.
