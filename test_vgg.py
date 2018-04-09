@@ -9,7 +9,6 @@ from keras.preprocessing.image import img_to_array
 from keras.models import load_model
 import numpy as np
 import argparse
-import imutils
 import cv2
 from keras.utils import plot_model
 from keras.models import Sequential, Model, load_model
