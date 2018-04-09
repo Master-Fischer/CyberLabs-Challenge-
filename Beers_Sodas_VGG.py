@@ -49,7 +49,7 @@ epochs = 10
 data = []
 labels = []
 
-path = "Images"
+path = "Dataset"
 
 load_process_img(path, data, labels)           
 
