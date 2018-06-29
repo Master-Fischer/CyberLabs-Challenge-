@@ -9,13 +9,13 @@ Bibliotecas Usadas:
 
 -Opencv
 
-O data set foi obtido pelo Google Images usando Faktun Batch Download Images[Extensão do Chrome].
+O data set foi obtido pelo Google Images.
 
 Foram criadas duas redes neurais:
 
  1)Arquitetura LeNet com tamanho das imagens (28,28).
  
-Foi possível obter uma “accuracy” de 78% com o modelo LeNet, porém devido ao tamanho das imagens (28,28) a rede não consegue extrair “features” suficientes devido as poucas camadas.
+Foi possível obter uma “accuracy” de 78% com o modelo LeNet, porém devido ao tamanho das imagens (28,28) a rede não consegue extrair “features” suficientes devido as poucas camadas. 
 
 Instruções:
 
