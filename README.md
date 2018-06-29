@@ -32,6 +32,6 @@ Instruções:
   
 5) Para testar, rodar test_beer_soda.py com uma imagem no mesmo diretorio e adicionar no local no codigo o nome da Imagem. 
 
-Link para dataset: 
+Link para dataset: https://www.dropbox.com/sh/nar7fst140c2xd8/AAB_gesJG5MQkvR033oM5bZ9a?dl=0
 
 
